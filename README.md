@@ -11,7 +11,7 @@ This repository provides short bash scripts to start an [AWS EC2 instance](https
 
 ## Setup
 
-1. Download the scripts to [install on your computer](https://github.com/AstroAure/VSJupytEC2/tree/linux). Put them where you want (home is easier, but we'll link to this directory later).
+1. Download the scripts to [install on your computer](https://github.com/AstroAure/VSJupytEC2/tree/main/linux). Put them where you want (home is easier, but we'll link to this directory later).
 2. Edit the different files to add the path to your EC2 key and the ID of your EC2 instance (can be a default value if you never want to use the commands with no arguments). See [Scripts](#scripts) for more detail on where and what to modify.
 3. Run `chmod +x FILENAME` in a terminal for every one of these scripts (replace `FILENAME` with the path and name of the scripts) to allow your computer to run them.
 4. Add `export PATH="$PATH:PATH/TO/SCRIPTS"` to your `.bashrc` file (at the root of your Linux terminal), where you replace `PATH/TO/SCRIPTS` with the absolute path to your scripts. If you put them in the home directory, then replace `PATH/TO/SCRIPTS` with `$HOME`.
@@ -20,7 +20,7 @@ This repository provides short bash scripts to start an [AWS EC2 instance](https
 7. Start your EC2 instance on the EC2 dashboard online.
 8. Run `ec2-configure YOUR-IPV4` where you replace `YOUR-IPV4` by the Public IPv4 DNS address of your EC2 instance (in the settings of your instance on the EC2 dashboard)
 9. Connect to your EC2 instance via VS Code by clicking on the $_>^<$ symbol in the bottom left corner, selecting `Connect to Host` and choosing your instance (by default `my-aws-ec2`).
-10. Download the scripts to [install on your EC2 instance](https://github.com/AstroAure/VSJupytEC2/tree/ec2) in your instance. You can download them on your computer and drag-and-drop them in your VS Code window.
+10. Download the scripts to [install on your EC2 instance](https://github.com/AstroAure/VSJupytEC2/tree/main/ec2) in your instance. You can download them on your computer and drag-and-drop them in your VS Code window.
 11. Run `chmod +x FILENAME` in a terminal for every one of these scripts (replace `FILENAME` with the path and name of the scripts) to allow the instance to run them.
 12. Add `export PATH="$PATH:PATH/TO/SCRIPTS"` to the `.bashrc` file in your EC2 instance (open a terminal in VS Code), where you replace `PATH/TO/SCRIPTS` with the absolute path to your scripts. If you put them in the home directory, then replace `PATH/TO/SCRIPTS` with `$HOME`.
 13. Setup Jupyter, by following the [Jupyter server security](#jupyter-server-security) steps.
