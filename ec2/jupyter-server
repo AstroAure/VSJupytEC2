@@ -1,0 +1,2 @@
+#!/bin/bash
+jupyter notebook --certfile=~/ssl/jupyter-cert.pem --keyfile ~/ssl/jupyter-key.key
