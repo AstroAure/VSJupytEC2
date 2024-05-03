@@ -13,10 +13,21 @@ This repository provides short bash scripts to start an [AWS EC2 instance](https
 
 1. Download the scripts to [install on your computer](linux). Put them where you want (home is easier, but we'll link to this directory later).
 2. Edit the different files to add the path to your EC2 key and the ID of your EC2 instance (can be a default value if you never want to use the commands with no arguments). See [Scripts](#scripts) for more detail on where and what to modify.
-3. Run `chmod +x FILENAME` in a terminal for every one of these scripts (replace `FILENAME` with the path and name of the scripts) to allow your computer to run them.
-4. If you want to be able to run the commands from anywhere, without the need to reference the path, add `export PATH="$PATH:PATH/TO/SCRIPTS"` in your `.bashrc` file (at the root of your Linux terminal). Replace `PATH/TO/SRIPTS` with the absolute path to your scripts. If you put them in the home directory, then replace `PATH/TO/SCRIPTS` with `$HOME`.
+3. Run `chmod +x FILENAME.sh` in a terminal for every one of these scripts (replace `FILENAME` with the path and name of the scripts) to allow your computer to run them.
+4. Add `export PATH="$PATH:PATH/TO/SCRIPTS"` to your `.bashrc` file (at the root of your Linux terminal), where you replace `PATH/TO/SCRIPTS` with the absolute path to your scripts. If you put them in the home directory, then replace `PATH/TO/SCRIPTS` with `$HOME`.
 5. Configure AWS CLI with your credentials. For that, run `aws configure` in your Linux terminal, and enter your public key, your private key, and the region where your instances are (see the EC2 dashboard for this information).
-6. 
+6. If you've never used SSH with VS Code, [create the SSH configuration file](#vs-code-ssh-configuration-file).
+7. Start your EC2 instance on the EC2 dashboard online.
+8. Run `ec2-configure YOUR-IPV4` where you replace `YOUR-IPV4` by the Public IPv4 DNS address of your EC2 instance (in the settings of your instance on the EC2 dashboard)
+9. Connect to your EC2 instance via VS Code by clicking on the $_>^<$ symbol in the bottom left corner, selecting `Connect to Host` and choosing your instance (by default `my-aws-ec2`).
+10. Download the scripts to [install on your EC2 instance](ec2) in your instance. You can download them on your computer and drag-and-drop them in your VS Code window.
+11. Run `chmod +x FILENAME.sh` in a terminal for every one of these scripts (replace `FILENAME` with the path and name of the scripts) to allow the instance to run them.
+12. Add `export PATH="$PATH:PATH/TO/SCRIPTS"` to the `.bashrc` file in your EC2 instance (open a terminal in VS Code), where you replace `PATH/TO/SCRIPTS` with the absolute path to your scripts. If you put them in the home directory, then replace `PATH/TO/SCRIPTS` with `$HOME`.
+13. Setup Jupyter, by following the [Jupyter server security](#jupyter-server-security) steps.
+14. You're done 🥳 You can now close VS Code and stop your EC2 instance.
+
+To fully test your install, you can run the [workflow](#workflow). For any issues, or problems with this setup or with running the scripts, please create an issue on this repository.
+It is recommended to read the explanation of the [scripts](#scripts) to avoid missing something, to understand how they work and to avoid running things blindly.
 
 #### VS Code SSH configuration file
 For it to work, you will have to create the configuration file first. This can be done by launching VS Code with `> Remote-SSH: Open SSH configuration file...` or by clicking on the $_>^<$ symbol in the bottom left corner and selecting `Connect to Host` and then `Configure SSH hosts`. It will create a `config` file in which you have to copy the following text, by repalcing `PATH/TO/EC2-KEY.pem` with the path to your EC2 key file. You can then save this file.
