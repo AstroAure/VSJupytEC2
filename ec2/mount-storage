@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo mkfs.ext4 -E nodiscard /dev/nvme1n1
+sudo mount -o discard /dev/nvme1n1 /$1/
+sudo chown ec2-user /$1
