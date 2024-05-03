@@ -11,7 +11,12 @@ This repository provides short bash scripts to start an [AWS EC2 instance](https
 
 ## Setup
 
-Download the scripts to [install on your computer](linux). Put them where you want
+1. Download the scripts to [install on your computer](linux). Put them where you want (home is easier, but we'll link to this directory later).
+2. Edit the different files to add the path to your EC2 key and the ID of your EC2 instance (can be a default value if you never want to use the commands with no arguments). See [Scripts](#scripts) for more detail on where and what to modify.
+3. Run `chmod +x FILENAME` in a terminal for every one of these scripts (replace `FILENAME` with the path and name of the scripts) to allow your computer to run them.
+4. If you want to be able to run the commands from anywhere, without the need to reference the path, add `export PATH="$PATH:PATH/TO/SCRIPTS"` in your `.bashrc` file (at the root of your Linux terminal). Replace `PATH/TO/SRIPTS` with the absolute path to your scripts. If you put them in the home directory, then replace `PATH/TO/SCRIPTS` with `$HOME`.
+5. Configure AWS CLI with your credentials. For that, run `aws configure` in your Linux terminal, and enter your public key, your private key, and the region where your instances are (see the EC2 dashboard for this information).
+6. 
 
 #### VS Code SSH configuration file
 For it to work, you will have to create the configuration file first. This can be done by launching VS Code with `> Remote-SSH: Open SSH configuration file...` or by clicking on the $_>^<$ symbol in the bottom left corner and selecting `Connect to Host` and then `Configure SSH hosts`. It will create a `config` file in which you have to copy the following text, by repalcing `PATH/TO/EC2-KEY.pem` with the path to your EC2 key file. You can then save this file.
