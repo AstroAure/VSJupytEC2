@@ -11,7 +11,7 @@ This repository provides short bash scripts to start an [AWS EC2 instance](https
 
 ## Setup
 
-TO DO
+Download the scripts to [install on your computer](linux). Put them where you want
 
 #### VS Code SSH configuration file
 For it to work, you will have to create the configuration file first. This can be done by launching VS Code with `> Remote-SSH: Open SSH configuration file...` or by clicking on the $_>^<$ symbol in the bottom left corner and selecting `Connect to Host` and then `Configure SSH hosts`. It will create a `config` file in which you have to copy the following text, by repalcing `PATH/TO/EC2-KEY.pem` with the path to your EC2 key file. You can then save this file.
@@ -39,7 +39,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout jupyter-key.key -out
 
 ## Workflow
 
-1. Starts the EC2 instance and Jupyter server. In a Linux terminal, run `ec2-jupyter-create`.
+1. Start the EC2 instance and Jupyter server. In a Linux terminal, run `ec2-jupyter-create`.
 2. Open VS Code, click on the $_>^<$ symbol in the bottom left corner, select `Connect to Host` and choose your instance (by default `my-aws-ec2`).
 3. You're connected in your EC2 instance ! You can choose your working directory, open a Git repository or clone one.
 4. To run a Jupyter notebook on the EC2-Jupyter server, open your notebook (in the VS Code connected to your EC2 instance), click `Select Kernel`, select `Existing Jupyter server...` and type `http://localhost:8888`. You will just have to enter the password you defined during setup.
