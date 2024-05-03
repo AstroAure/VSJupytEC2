@@ -1,0 +1,5 @@
+#!/bin/bash
+ID=${1:-'YOUR-EC2-ID'}
+IPV4="$(aws ec2 describe-instances --instance-ids $ID --query 'Reservations[].Instances[].PublicDnsName' --output text)"
+ec2-jupyter-quit $IPV4
+aws ec2 stop-instances --instance-ids $ID
